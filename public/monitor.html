@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Monitoring</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #e9ecef;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        header {
+            background: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .row:last-child {
+            border-bottom: none;
+        }
+        .column {
+            flex: 1;
+            padding: 0 10px;
+            text-align: center;
+        }
+        .column h3 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #495057;
+        }
+        .column p {
+            margin: 5px 0;
+            color: #6c757d;
+        }
+        .status {
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .status.in-progress {
+            background-color: #ffc107;
+            color: white;
+        }
+        .status.completed {
+            background-color: #28a745;
+            color: white;
+        }
+        .status.pending {
+            background-color: #17a2b8;
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+            .column {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Employee Task Monitor</h1>
+        </header>
+        <div class="row">
+            <div class="column">
+                <h3>Task 1</h3>
+                <p class="status in-progress">Status: In Progress</p>
+            </div>
+            <div class="column">
+                <h3>Task 2</h3>
+                <p class="status completed">Status: Completed</p>
+            </div>
+            <div class="column">
+                <h3>Task 3</h3>
+                <p class="status pending">Status: Pending</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <h3>Task 4</h3>
+                <p class="status in-progress">Status: In Progress</p>
+            </div>
+            <div class="column">
+                <h3>Task 5</h3>
+                <p class="status pending">Status: Not Started</p>
+            </div>
+            <div class="column">
+                <h3>Task 6</h3>
+                <p class="status completed">Status: Completed</p>
+            </div>
+        </div>
+        <!-- Additional rows can be added here -->
+    </div>
+</body>
+</html>
