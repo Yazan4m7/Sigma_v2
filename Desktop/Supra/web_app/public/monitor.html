@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7fa;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 20px;
         }
@@ -21,85 +21,83 @@
             overflow: hidden;
         }
         header {
-            background: #4a90e2;
+            background: #007bff;
             color: white;
             padding: 30px;
             text-align: center;
-            border-bottom: 5px solid #357ab8;
+            border-bottom: 5px solid #0056b3;
         }
         h1 {
             margin: 0;
-            font-size: 2.8em;
-            letter-spacing: 1px;
+            font-size: 2.5em;
         }
         .row {
             display: flex;
             justify-content: space-between;
-            padding: 25px;
+            padding: 20px;
             border-bottom: 1px solid #e0e0e0;
-            transition: background-color 0.3s;
-        }
-        .row:hover {
-            background-color: #f1f1f1;
         }
         .row:last-child {
             border-bottom: none;
         }
         .column {
             flex: 1;
-            padding: 0 20px;
+            padding: 0 15px;
             text-align: center;
-            transition: transform 0.2s;
         }
-        .column:hover {
-            transform: scale(1.03);
-        }
-        .column h3 {
+        .column h2 {
             margin: 0;
-            font-size: 1.6em;
+            font-size: 1.8em;
             color: #333;
             font-weight: 600;
+            margin-bottom: 15px;
         }
-        .column p {
-            margin: 5px 0;
-            font-size: 1.1em;
-            color: #666;
+        .appointment, .order, .delivery {
+            background: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: box-shadow 0.3s;
+        }
+        .appointment:hover, .order:hover, .delivery:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
         .status {
             font-weight: bold;
-            padding: 10px 15px;
-            border-radius: 8px;
+            padding: 5px 10px;
+            border-radius: 5px;
             display: inline-block;
-            font-size: 1em;
+            font-size: 0.9em;
             text-transform: uppercase;
         }
+        .status.waiting {
+            background-color: #e74c3c;
+            color: white;
+        }
         .status.in-progress {
-            background-color: #f39c12;
+            background-color: #3498db;
             color: white;
         }
         .status.completed {
-            background-color: #27ae60;
+            background-color: #2ecc71;
             color: white;
         }
-        .status.pending {
-            background-color: #2980b9;
-            color: white;
+        .order-details, .appointment-details, .delivery-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .order-details div, .appointment-details div, .delivery-details div {
+            flex: 1;
+            text-align: left;
         }
         @media (max-width: 768px) {
             .row {
                 flex-direction: column;
-                padding: 15px;
             }
             .column {
-                margin-bottom: 15px;
-            }
-        }
-        @media (min-width: 769px) {
-            .row {
-                flex-direction: row;
-            }
-            .column {
-                flex: 1 0 30%; /* Ensures three columns */
+                margin-bottom: 20px;
             }
         }
     </style>
@@ -111,33 +109,55 @@
         </header>
         <div class="row">
             <div class="column">
-                <h3>Task 1</h3>
-                <p class="status in-progress">Status: In Progress</p>
+                <h2>Appointments</h2>
+                <div class="appointment">
+                    <div class="appointment-details">
+                        <div>Dr. Smith</div>
+                        <div>Created by: John Doe</div>
+                    </div>
+                </div>
+                <div class="appointment">
+                    <div class="appointment-details">
+                        <div>Dr. Johnson</div>
+                        <div>Created by: Jane Doe</div>
+                    </div>
+                </div>
             </div>
             <div class="column">
-                <h3>Task 2</h3>
-                <p class="status completed">Status: Completed</p>
+                <h2>Orders</h2>
+                <div class="order">
+                    <div class="order-details">
+                        <div>Dr. Smith</div>
+                        <div>Patient: Alice</div>
+                        <div class="status in-progress">In Progress: Mike</div>
+                    </div>
+                </div>
+                <div class="order">
+                    <div class="order-details">
+                        <div>Dr. Johnson</div>
+                        <div>Patient: Bob</div>
+                        <div class="status.waiting">Waiting</div>
+                    </div>
+                </div>
             </div>
             <div class="column">
-                <h3>Task 3</h3>
-                <p class="status pending">Status: Pending</p>
+                <h2>Deliveries</h2>
+                <div class="delivery">
+                    <div class="delivery-details">
+                        <div>Dr. Smith</div>
+                        <div>Patient: Charlie</div>
+                        <div>Delivery Date: 2023-10-15</div>
+                    </div>
+                </div>
+                <div class="delivery">
+                    <div class="delivery-details">
+                        <div>Dr. Johnson</div>
+                        <div>Patient: David</div>
+                        <div>Delivery Date: 2023-10-16</div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="column">
-                <h3>Task 4</h3>
-                <p class="status in-progress">Status: In Progress</p>
-            </div>
-            <div class="column">
-                <h3>Task 5</h3>
-                <p class="status pending">Status: Not Started</p>
-            </div>
-            <div class="column">
-                <h3>Task 6</h3>
-                <p class="status completed">Status: Completed</p>
-            </div>
-        </div>
-        <!-- Additional rows can be added here -->
     </div>
 </body>
 </html>
