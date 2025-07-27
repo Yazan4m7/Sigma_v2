@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f2f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fa;
             margin: 0;
             padding: 20px;
         }
@@ -16,72 +16,79 @@
             max-width: 1200px;
             margin: auto;
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
         header {
-            background: #007bff;
+            background: #4a90e2;
             color: white;
-            padding: 20px;
+            padding: 30px;
             text-align: center;
-            border-bottom: 4px solid #0056b3;
+            border-bottom: 5px solid #357ab8;
         }
         h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 2.8em;
+            letter-spacing: 1px;
         }
         .row {
             display: flex;
             justify-content: space-between;
-            padding: 20px;
+            padding: 25px;
             border-bottom: 1px solid #e0e0e0;
+            transition: background-color 0.3s;
+        }
+        .row:hover {
+            background-color: #f1f1f1;
         }
         .row:last-child {
             border-bottom: none;
         }
         .column {
             flex: 1;
-            padding: 0 15px;
+            padding: 0 20px;
             text-align: center;
             transition: transform 0.2s;
         }
         .column:hover {
-            transform: scale(1.02);
+            transform: scale(1.03);
         }
         .column h3 {
             margin: 0;
-            font-size: 1.8em;
+            font-size: 1.6em;
             color: #333;
+            font-weight: 600;
         }
         .column p {
             margin: 5px 0;
             font-size: 1.1em;
-            color: #555;
+            color: #666;
         }
         .status {
             font-weight: bold;
-            padding: 8px 12px;
-            border-radius: 5px;
+            padding: 10px 15px;
+            border-radius: 8px;
             display: inline-block;
             font-size: 1em;
+            text-transform: uppercase;
         }
         .status.in-progress {
-            background-color: #ffc107;
+            background-color: #f39c12;
             color: white;
         }
         .status.completed {
-            background-color: #28a745;
+            background-color: #27ae60;
             color: white;
         }
         .status.pending {
-            background-color: #17a2b8;
+            background-color: #2980b9;
             color: white;
         }
         @media (max-width: 768px) {
             .row {
                 flex-direction: column;
-                padding: 10px;
+                padding: 15px;
             }
             .column {
                 margin-bottom: 15px;
