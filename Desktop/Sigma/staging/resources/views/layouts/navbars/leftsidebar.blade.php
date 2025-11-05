@@ -12,7 +12,7 @@
                 <img src="{{ asset('assets') }}/images/logo_horiz.svg" alt="SIGMA Logo" style="width: 88%; max-width: 180px; height: auto;" />
             </a>
             <button class="pin-sidebar-btn" id="pinSidebarBtn" title="Pin sidebar">
-                <i class="tim-icons icon-pin"></i>
+                <i class="fa-solid fa-thumbtack"></i>
             </button>
         </div>
 

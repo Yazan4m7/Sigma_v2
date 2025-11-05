@@ -4,7 +4,7 @@
             <a href="#" class="simple-text logo-mini">{{ _('WD') }}</a>
             <a href="#" class="simple-text logo-normal">{{ _('White Dashboard') }}</a>
             <button class="pin-sidebar-btn" id="pinSidebarBtn" title="Pin sidebar">
-                <i class="tim-icons icon-pin"></i>
+                <i class="fa-solid fa-thumbtack"></i>
             </button>
         </div>
         <ul class="nav">
