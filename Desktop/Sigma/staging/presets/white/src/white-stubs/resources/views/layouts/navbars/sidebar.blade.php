@@ -1,8 +1,11 @@
-<div class="sidebar">
+<div class="sidebar" id="sidebar">
     <div class="sidebar-wrapper">
         <div class="logo">
             <a href="#" class="simple-text logo-mini">{{ _('WD') }}</a>
             <a href="#" class="simple-text logo-normal">{{ _('White Dashboard') }}</a>
+            <button class="pin-sidebar-btn" id="pinSidebarBtn" title="Pin sidebar">
+                <i class="tim-icons icon-pin"></i>
+            </button>
         </div>
         <ul class="nav">
             <li @if ($pageSlug == 'dashboard') class="active " @endif>

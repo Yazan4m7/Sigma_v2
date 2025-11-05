@@ -148,6 +148,7 @@ $(document).ready(function() {
     <!-- UI Components & Features -->
     <script src="{{asset('assets/js/sweetalert2.min.js')}}"></script>
     <script src="{{asset('assets/js/sidebar-scroll.js')}}"></script>
+    <script src="{{asset('assets/js/sidebar-autohide.js')}}"></script>
 
 
 

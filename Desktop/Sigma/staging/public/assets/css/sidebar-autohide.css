@@ -1,0 +1,226 @@
+/* Auto-hide Sidebar Styles */
+
+/* Pin button styling */
+.pin-sidebar-btn {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.pin-sidebar-btn:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.pin-sidebar-btn i {
+    transition: transform 0.3s ease;
+}
+
+/* Pinned state - rotate pin icon */
+.sidebar.pinned .pin-sidebar-btn i {
+    transform: rotate(45deg);
+}
+
+/* Default collapsed state - show only icons */
+.sidebar {
+    width: 70px;
+    transition: width 0.3s ease;
+    overflow: visible;
+}
+
+.sidebar .sidebar-wrapper {
+    width: 70px;
+    transition: width 0.3s ease;
+}
+
+.sidebar .logo {
+    width: 70px;
+    transition: width 0.3s ease;
+    overflow: hidden;
+}
+
+/* Hide text elements in collapsed state */
+.sidebar .logo-normal,
+.sidebar .nav li a p,
+.sidebar .nav li a .nav-link-text,
+.sidebar .nav li a .caret {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Show only logo mini and icons */
+.sidebar .logo-mini {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Center icons in collapsed state */
+.sidebar .nav li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    position: relative;
+}
+
+.sidebar .nav li a i {
+    margin: 0;
+    font-size: 20px;
+}
+
+/* Expanded state on hover or pinned */
+.sidebar:hover,
+.sidebar.pinned {
+    width: 260px;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar:hover .sidebar-wrapper,
+.sidebar.pinned .sidebar-wrapper {
+    width: 260px;
+}
+
+.sidebar:hover .logo,
+.sidebar.pinned .logo {
+    width: 260px;
+}
+
+/* Show text elements when expanded */
+.sidebar:hover .logo-normal,
+.sidebar.pinned .logo-normal,
+.sidebar:hover .nav li a p,
+.sidebar.pinned .nav li a p,
+.sidebar:hover .nav li a .nav-link-text,
+.sidebar.pinned .nav li a .nav-link-text,
+.sidebar:hover .nav li a .caret,
+.sidebar.pinned .nav li a .caret {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Adjust icon position when expanded */
+.sidebar:hover .nav li a,
+.sidebar.pinned .nav li a {
+    justify-content: flex-start;
+    padding: 12px 20px;
+}
+
+.sidebar:hover .nav li a i,
+.sidebar.pinned .nav li a i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Hide pin button in collapsed state, show on hover */
+.sidebar .pin-sidebar-btn {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.sidebar:hover .pin-sidebar-btn,
+.sidebar.pinned .pin-sidebar-btn {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Nested menu items styling */
+.sidebar .nav li .collapse,
+.sidebar .nav li .collapsing {
+    display: none;
+}
+
+.sidebar:hover .nav li .collapse.show,
+.sidebar.pinned .nav li .collapse.show {
+    display: block;
+}
+
+/* Adjust main content margin */
+.main-panel {
+    margin-left: 70px;
+    transition: margin-left 0.3s ease;
+}
+
+/* Smooth transitions for all child elements */
+.sidebar * {
+    transition: all 0.3s ease;
+}
+
+/* Ensure submenu items are properly styled */
+.sidebar:hover .nav .collapse ul,
+.sidebar.pinned .nav .collapse ul {
+    padding-left: 15px;
+}
+
+/* Logo mini visibility */
+.sidebar .logo-mini {
+    display: inline-block;
+}
+
+.sidebar:hover .logo-mini,
+.sidebar.pinned .logo-mini {
+    display: inline-block;
+}
+
+/* Adjust for perfect overlay */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 1000;
+}
+
+/* Tooltip-like behavior for collapsed state (optional enhancement) */
+.sidebar .nav li a::after {
+    content: attr(data-title);
+    position: absolute;
+    left: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1001;
+}
+
+.sidebar:not(:hover):not(.pinned) .nav li a:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidebar:hover .nav li a::after,
+.sidebar.pinned .nav li a::after {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .sidebar {
+        width: 0;
+    }
+
+    .sidebar:hover,
+    .sidebar.pinned {
+        width: 260px;
+    }
+
+    .main-panel {
+        margin-left: 0;
+    }
+}

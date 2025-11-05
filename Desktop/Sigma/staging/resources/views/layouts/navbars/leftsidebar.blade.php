@@ -1,5 +1,5 @@
 
-<div class="sidebar">
+<div class="sidebar" id="sidebar">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,1,0" />
 
     @php
@@ -7,10 +7,13 @@
     @endphp
     <div class="sidebar-wrapper">
         <!-- Logo Section -->
-        <div class="logo" style="padding: 20px 15px; text-align: center;">
+        <div class="logo" style="padding: 20px 15px; text-align: center; position: relative;">
             <a href="{{ route('home') }}" class="simple-text logo-normal">
                 <img src="{{ asset('assets') }}/images/logo_horiz.svg" alt="SIGMA Logo" style="width: 88%; max-width: 180px; height: auto;" />
             </a>
+            <button class="pin-sidebar-btn" id="pinSidebarBtn" title="Pin sidebar">
+                <i class="tim-icons icon-pin"></i>
+            </button>
         </div>
 
         <ul class="nav">

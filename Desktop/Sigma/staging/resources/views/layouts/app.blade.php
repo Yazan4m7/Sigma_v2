@@ -149,6 +149,7 @@
     <link href="{{ asset('assets') }}/css/custom-styling.css" rel="stylesheet"/>
     <link href="{{ asset('assets') }}/css/sidebar-fix.css" rel="stylesheet"/>
     <link href="{{ asset('assets') }}/css/sidebar-fullwidth-fix.css" rel="stylesheet"/>
+    <link href="{{ asset('assets') }}/css/sidebar-autohide.css" rel="stylesheet"/>
     <link href="{{ asset('css') }}/georgia-font.css" rel="stylesheet"/>
     <link href="{{ asset('css/ysh-custom-css/machine-images.css') }}" rel="stylesheet"/>
     <link rel="icon" type="image/png" href="{{asset('assets/sigma_favico.png')}}"/>
